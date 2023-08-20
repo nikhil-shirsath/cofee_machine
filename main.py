@@ -99,7 +99,7 @@ while show_again:
         show_again=False
     elif user_choice=="report":
         print(f" water : {resources['water']} \n milk : {resources['milk']} \n coffee : {resources['coffee']} \n collection ${profit} " )
-    else:
+    elif user_choice=="espresso" or user_choice =="latte" or user_choice=="cappuccino":
         drink =MENU[user_choice]
         # print(drink)
         if (resource_sufficient(drink=drink['ingredients'],resources=resources)):
@@ -109,3 +109,5 @@ while show_again:
                coffee_done = make_coffee(coffee_ingredients=drink['ingredients'],resources=resources)
                if coffee_done:
                    print(f"Here is your {user_choice}. Enjoy!.")
+    else:
+        print("Enter proper option. ")
